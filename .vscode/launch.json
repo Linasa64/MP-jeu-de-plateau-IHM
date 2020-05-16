@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - magic",
+      "request": "launch",
+      "mainClass": "magic",
+      "projectName": "java-quickstart"
+    },
+    {
+      "type": "java",
       "name": "Debug",
       "request": "launch",
       "mainClass": "App",
