@@ -3,6 +3,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 
+import java.util.Scanner; 
+
 public class Joueur {
     int pv;
     String nomJoueur;
@@ -18,6 +20,15 @@ public class Joueur {
         this.numTour=0;
     }
 
+    public void payerCreature () {
+        Scanner scan = new Scanner(System.in);
+        int numCreaturePayee = scan.nextInt();
+
+        Creature creaturePayee=this.pioche.get(numCreaturePayee);
+        this.champBataille.add(creaturePayee);
+        this.pioche.remove(numCreaturePayee);
+    }
+  
     public void genereMainDepart() {
         for (int i=0; i<7; i++){
             pioche.add(new Creature());
