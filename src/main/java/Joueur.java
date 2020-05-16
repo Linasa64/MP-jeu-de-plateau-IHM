@@ -30,4 +30,8 @@ public class Joueur {
         }
     }
 
+    public void addMana() {
+        this.mana=numTour;
+    }
+
 }
