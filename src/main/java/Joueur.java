@@ -21,12 +21,16 @@ public class Joueur {
     }
 
     public void payerCreature () {
+        System.out.println("ENTRER N° CREATURE A PAYER");
         Scanner scan = new Scanner(System.in);
         int numCreaturePayee = scan.nextInt();
+
+        System.out.println();
 
         Creature creaturePayee=this.pioche.get(numCreaturePayee);
         this.champBataille.add(creaturePayee);
         this.pioche.remove(numCreaturePayee);
+        this.mana=this.mana - creaturePayee.getPrix();
     }
   
     public void genereMainDepart() {
@@ -36,9 +40,24 @@ public class Joueur {
     }
 
     public void printPioche() {
+        System.out.println("MAIN JOUEUR");
         for(int i=0;i<this.pioche.size();i++){
             System.out.println("Carte n°" + i + ": Prix: " +this.pioche.get(i).getPrix() + " Force: " + this.pioche.get(i).getForce());
         }
+        System.out.println();
+        System.out.println("***");
+        System.out.println();
+
+    }
+
+    public void printChampBataille() {
+        System.out.println("CHAMP DE BATAILLE");
+        for(int i=0;i<this.champBataille.size();i++){
+            System.out.println("Carte n°" + i + ": Force: " + this.champBataille.get(i).getForce());
+        }
+        System.out.println();
+        System.out.println("***");
+        System.out.println();
     }
 
     public void addMana() {
