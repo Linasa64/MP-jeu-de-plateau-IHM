@@ -1,5 +1,5 @@
 public class Partie {
-    joueur joueur1;
-    joueur joueur2;
+    Joueur joueur1;
+    Joueur joueur2;
     int numTour;
 }

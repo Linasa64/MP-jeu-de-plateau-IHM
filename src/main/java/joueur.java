@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 
-public class joueur {
+public class Joueur {
     int pv;
     String nomJoueur;
     int mana;
@@ -11,7 +11,8 @@ public class joueur {
     ArrayList<Creature> pioche;
     ArrayList<Creature> champBataille;
 
-    public joueur(){
-
+    public Joueur(){
+        this.pioche = new ArrayList<Creature>();
+        this.champBataille = new ArrayList<Creature>();
     }
 }

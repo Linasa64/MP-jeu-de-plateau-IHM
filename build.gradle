@@ -16,5 +16,5 @@ run {
 }
 
 application {
-    mainClassName = 'App'
+    mainClassName = 'Magic'
 }
