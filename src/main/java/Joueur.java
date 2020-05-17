@@ -108,7 +108,7 @@ public class Joueur {
     }
 
     public void printPV () {
-        System.out.println(this.pv);
+        System.out.print(this.pv);
     }
 	
 }

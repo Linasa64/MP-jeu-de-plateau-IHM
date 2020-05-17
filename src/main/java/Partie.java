@@ -5,10 +5,10 @@ public class Partie {
 
     public void partieEstTerminée (Joueur a, Joueur b) {
         if(a.pv<=0){
-            System.out.println(a.nomJoueur + "a perdu, I hear CHEH in my oreillette");
+            System.out.println(a.nomJoueur + " a perdu, I hear CHEH in my oreillette");
         }
         else if(b.pv<=0){
-            System.out.println(b.nomJoueur + "a perdu, I hear CHEH in my oreillette");
+            System.out.println(b.nomJoueur + " a perdu, I hear CHEH in my oreillette");
         }
     }
 
