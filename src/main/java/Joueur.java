@@ -16,7 +16,10 @@ public class Joueur {
     
 
     public Joueur(){
+        System.out.println("Ouech bien ou quoi ? C'est quoi ton blaze ?");
         this.pv=20;
+        Scanner monNom = new Scanner(System.in);
+        this.nomJoueur=monNom.nextLine();
         this.pioche = new ArrayList<Creature>();
         this.champBataille = new ArrayList<Creature>();
         this.numTour=0;
@@ -92,8 +95,20 @@ public class Joueur {
 		else { // il ne se passe rien
 			System.out.println ("c'est comme dans plus belle la vie : il ne se passe rien");
 		
-		}
+        }
+        
+        System.out.println();
+        System.out.println("***");
+        System.out.println();
+
 	}
-	
+    
+    public int getPV () {
+        return this.pv;
+    }
+
+    public void printPV () {
+        System.out.print(this.pv);
+    }
 	
 }
