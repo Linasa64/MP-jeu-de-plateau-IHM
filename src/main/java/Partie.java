@@ -14,14 +14,14 @@ public class Partie {
 
     public void initialisation (){
 
-        Joueur joueur1=new Joueur(); 
-        Joueur joueur2=new Joueur();
+        this.joueur1=new Joueur(); 
+        this.joueur2=new Joueur();
 
-        joueur1.adversaire=joueur2;
-        joueur2.adversaire=joueur1;
+        this.joueur1.adversaire=joueur2;
+        this.joueur2.adversaire=joueur1;
 
-        joueur1.genereMainDepart();
-        joueur2.genereMainDepart();
+        this.joueur1.genereMainDepart();
+        this.joueur2.genereMainDepart();
 
     }
 
@@ -43,13 +43,20 @@ public class Partie {
         a.mana=a.numTour;
 
         a.pioche.add(new Creature());
-        System.out.println(a.pioche);
-        System.out.println(a.champBataille);
+        a.printPioche();
+        a.printChampBataille();
         
         a.payerCreature();
-        System.out.println(a.champBataille);
+        a.printChampBataille();
         a.attaque();
-        System.out.println(a.champBataille);
+
+        System.out.print("MES PV: ");
+        a.printPV();
+        System.out.print(" ; PV DE MON ADVERSAIRE: ");
+        a.adversaire.printPV();
+        System.out.println();
+        a.printChampBataille();
+
 
     }
 

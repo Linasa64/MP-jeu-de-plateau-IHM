@@ -95,11 +95,20 @@ public class Joueur {
 		else { // il ne se passe rien
 			System.out.println ("c'est comme dans plus belle la vie : il ne se passe rien");
 		
-		}
+        }
+        
+        System.out.println();
+        System.out.println("***");
+        System.out.println();
+
 	}
     
     public int getPV () {
         return this.pv;
+    }
+
+    public void printPV () {
+        System.out.println(this.pv);
     }
 	
 }
