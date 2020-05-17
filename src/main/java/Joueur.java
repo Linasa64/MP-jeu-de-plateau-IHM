@@ -12,6 +12,8 @@ public class Joueur {
     int numTour;
     ArrayList<Creature> pioche;
     ArrayList<Creature> champBataille;
+    Joueur adversaire;
+    
 
     public Joueur(){
         this.pv=20;
@@ -63,5 +65,35 @@ public class Joueur {
     public void addMana() {
         this.mana=numTour;
     }
+    
+    public void attaque(){
+		
+		System.out.println("ENTRER N° CREATURE ATTAQUANTE"); // on attaque avec une carte à la fois 
+        Scanner scan = new Scanner(System.in);
+        int numCreatureAttaquante = scan.nextInt();
 
+        System.out.println();
+		
+		double chanceAttaque=Math.random();
+		
+		if (chanceAttaque <= 0.33){  // attaque reussit
+			System.out.println("*Rick astley danse*");
+			System.out.println("votre attaque réussit");
+			Creature creatureAttaquante=this.champBataille.get(numCreatureAttaquante);
+			this.adversaire.pv=this.adversaire.pv-creatureAttaquante.getForce();
+			
+		}
+		else if (chanceAttaque >= 0.66){ // l'attaque ne réussit pas la créature se détruit
+			
+			System.out.println("WASTED LA NUCLEARITE DES ROLLERS A DETRUIT VOTRE CARTE"); // eddy malou n'est pas fier de vous
+			this.champBataille.remove(numCreatureAttaquante);			
+			
+		}
+		else { // il ne se passe rien
+			System.out.println ("c'est comme dans plus belle la vie : il ne se passe rien");
+		
+		}
+	}
+	
+	
 }
