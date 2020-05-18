@@ -26,16 +26,40 @@ public class Joueur {
     }
 
     public void payerCreature () {
-        System.out.println("ENTRER N° CREATURE A PAYER");
-        Scanner scan = new Scanner(System.in);
-        int numCreaturePayee = scan.nextInt();
 
         System.out.println();
+        System.out.println("* * * PAYER CREATURE * * *");
+        System.out.println();
 
-        Creature creaturePayee=this.pioche.get(numCreaturePayee);
-        this.champBataille.add(creaturePayee);
-        this.pioche.remove(numCreaturePayee);
-        this.mana=this.mana - creaturePayee.getPrix();
+        for (int i=0; i<this.pioche.size(); i++) {
+
+            int prix =this.pioche.get(i).getPrix();
+            
+            if(prix<=this.mana){
+
+                System.out.println("ENTRER N° CREATURE A PAYER");
+                Scanner scan = new Scanner(System.in);
+                int numCreaturePayee = scan.nextInt();
+
+                System.out.println();
+
+                Creature creaturePayee=this.pioche.get(numCreaturePayee);
+
+                if(creaturePayee.getPrix()<=this.mana){
+                    this.champBataille.add(creaturePayee);
+                    this.pioche.remove(numCreaturePayee);
+                    this.mana=this.mana - creaturePayee.getPrix();
+                }
+                else{
+                    System.out.println("VOUS N'AVEZ PAS ASSEZ DE MANA POUR PAYER CETTE CREATURE. SAISISSEZ UN NOUVEAU N°");
+                }
+            }
+            else{
+            }
+        }
+        System.out.println();
+        System.out.println("* * * PHASE D'ATTAQUE * * *");
+        System.out.println();
     }
   
     public void genereMainDepart() {
