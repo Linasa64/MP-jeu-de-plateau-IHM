@@ -3,7 +3,7 @@ public class Partie {
     Joueur joueur2;
     int numTour;
 
-    public void partieEstTerminée (Joueur a, Joueur b) {
+    public void partieEstTerminee (Joueur a, Joueur b) {
         if(a.pv<=0){
             System.out.println(a.nomJoueur + " a perdu, I hear CHEH in my oreillette");
         }
