@@ -126,7 +126,7 @@ public class Joueur {
 		
             if (chanceAttaque <= 0.33){  // attaque reussit
                 System.out.println("*Rick astley danse*");
-                System.out.println("votre attaque rÃ©ussit");
+                System.out.println("votre attaque réussit");
                 Creature creatureAttaquante=this.champBataille.get(numCreatureAttaquante);
                 this.adversaire.pv=this.adversaire.pv-creatureAttaquante.getForce();
 			
@@ -157,6 +157,10 @@ public class Joueur {
 
     public void printPV () {
         System.out.print(this.pv);
+    }
+
+    public void printMana() {
+        System.out.print(this.mana);
     }
 
     public void entreeContinuer() {

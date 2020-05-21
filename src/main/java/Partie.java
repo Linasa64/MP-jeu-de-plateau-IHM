@@ -42,7 +42,12 @@ public class Partie {
         this.numTour=this.numTour+1;
 
         a.numTour=a.numTour+1;
-        a.mana=a.numTour;
+        a.mana=a.mana+a.numTour;
+
+        System.out.print("MON MANA: ");
+        a.printMana();
+        System.out.println();
+        System.out.println();
 
         a.pioche.add(new Creature());
         a.printPioche();
@@ -56,6 +61,7 @@ public class Partie {
         a.printPV();
         System.out.print(" ; PV DE MON ADVERSAIRE: ");
         a.adversaire.printPV();
+
         System.out.println();
         a.printChampBataille();
 
