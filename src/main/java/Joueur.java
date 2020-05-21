@@ -3,6 +3,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.ListIterator;
+
 import java.util.Scanner; 
 
 public class Joueur {
@@ -31,20 +36,17 @@ public class Joueur {
         System.out.println("* * * PAYER CREATURE * * *");
         System.out.println();
 
-        for (int i=0; i<this.pioche.size(); i++) {
-
-            int prix =this.pioche.get(i).getPrix();
-            
-            if(prix<=this.mana){
-
                 System.out.println("ENTRER N° CREATURE A PAYER");
+                System.out.println("Taper 0 pour passer");
                 Scanner scan = new Scanner(System.in);
                 int numCreaturePayee = scan.nextInt();
+                if(numCreaturePayee==0){
+                	System.out.println("TOUR PASSÉ");
+                }else{
 
                 System.out.println();
 
                 Creature creaturePayee=this.pioche.get(numCreaturePayee);
-
                 if(creaturePayee.getPrix()<=this.mana){
                     this.champBataille.add(creaturePayee);
                     this.pioche.remove(numCreaturePayee);
@@ -54,9 +56,8 @@ public class Joueur {
                     System.out.println("VOUS N'AVEZ PAS ASSEZ DE MANA POUR PAYER CETTE CREATURE. SAISISSEZ UN NOUVEAU N°");
                 }
             }
-            else{
-            }
-        }
+    
+            
         System.out.println();
         System.out.println("* * * PHASE D'ATTAQUE * * *");
         System.out.println();
@@ -95,7 +96,7 @@ public class Joueur {
     
     public void attaque(){
 		
-		System.out.println("ENTRER N° CREATURE ATTAQUANTE"); // on attaque avec une carte à la fois 
+		System.out.println("ENTRER NÂ° CREATURE ATTAQUANTE"); // on attaque avec une carte Ã  la fois 
         Scanner scan = new Scanner(System.in);
         int numCreatureAttaquante = scan.nextInt();
 
@@ -105,12 +106,12 @@ public class Joueur {
 		
 		if (chanceAttaque <= 0.33){  // attaque reussit
 			System.out.println("*Rick astley danse*");
-			System.out.println("votre attaque réussit");
+			System.out.println("votre attaque rÃ©ussit");
 			Creature creatureAttaquante=this.champBataille.get(numCreatureAttaquante);
 			this.adversaire.pv=this.adversaire.pv-creatureAttaquante.getForce();
 			
 		}
-		else if (chanceAttaque >= 0.66){ // l'attaque ne réussit pas la créature se détruit
+		else if (chanceAttaque >= 0.66){ // l'attaque ne rÃ©ussit pas la crÃ©ature se dÃ©truit
 			
 			System.out.println("WASTED LA NUCLEARITE DES ROLLERS A DETRUIT VOTRE CARTE"); // eddy malou n'est pas fier de vous
 			this.champBataille.remove(numCreatureAttaquante);			

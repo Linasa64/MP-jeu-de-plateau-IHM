@@ -7,6 +7,6 @@ public class Magic {
             nouvellePartie.partie();
         }
 
-        nouvellePartie.partieEstTerminée(nouvellePartie.joueur1, nouvellePartie.joueur2);
+        nouvellePartie.partieEstTerminee(nouvellePartie.joueur1, nouvellePartie.joueur2);
     }
 }
