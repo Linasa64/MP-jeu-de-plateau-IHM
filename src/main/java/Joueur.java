@@ -106,37 +106,46 @@ public class Joueur {
     }
     
     public void attaque(){
-		
-		System.out.println("ENTRER NÂ° CREATURE ATTAQUANTE"); // on attaque avec une carte Ã  la fois 
-        Scanner scan = new Scanner(System.in);
-        int numCreatureAttaquante = scan.nextInt();
 
-        System.out.println();
-		
-		double chanceAttaque=Math.random();
-		
-		if (chanceAttaque <= 0.33){  // attaque reussit
-			System.out.println("*Rick astley danse*");
-			System.out.println("votre attaque rÃ©ussit");
-			Creature creatureAttaquante=this.champBataille.get(numCreatureAttaquante);
-			this.adversaire.pv=this.adversaire.pv-creatureAttaquante.getForce();
-			
-		}
-		else if (chanceAttaque >= 0.66){ // l'attaque ne rÃ©ussit pas la crÃ©ature se dÃ©truit
-			
-			System.out.println("WASTED LA NUCLEARITE DES ROLLERS A DETRUIT VOTRE CARTE"); // eddy malou n'est pas fier de vous
-			this.champBataille.remove(numCreatureAttaquante);			
-			
-		}
-		else { // il ne se passe rien
-			System.out.println ("c'est comme dans plus belle la vie : il ne se passe rien");
-		
+        boolean empty = this.champBataille.isEmpty();
+
+        if (empty == true) {
+            System.out.println("VOUS N'AVEZ PAS DE CREATURE SUR LE CHAMP DE BATAILLE, FIN DE VOTRE TOUR");
         }
-        
-        System.out.println();
-        System.out.println("***");
-        System.out.println();
 
+        else {
+		
+		    System.out.println("ENTRER NÂ° CREATURE ATTAQUANTE"); // on attaque avec une carte Ã  la fois 
+            Scanner scan = new Scanner(System.in);
+            int numCreatureAttaquante = scan.nextInt();
+
+            System.out.println();
+		
+		    double chanceAttaque=Math.random();
+		
+            if (chanceAttaque <= 0.33){  // attaque reussit
+                System.out.println("*Rick astley danse*");
+                System.out.println("votre attaque rÃ©ussit");
+                Creature creatureAttaquante=this.champBataille.get(numCreatureAttaquante);
+                this.adversaire.pv=this.adversaire.pv-creatureAttaquante.getForce();
+			
+            }
+            else if (chanceAttaque >= 0.66){ // l'attaque ne rÃ©ussit pas la crÃ©ature se dÃ©truit
+                
+                System.out.println("WASTED LA NUCLEARITE DES ROLLERS A DETRUIT VOTRE CARTE"); // eddy malou n'est pas fier de vous
+                this.champBataille.remove(numCreatureAttaquante);			
+                
+            }
+            else { // il ne se passe rien
+                System.out.println ("c'est comme dans plus belle la vie : il ne se passe rien");
+            
+            }
+            
+            System.out.println();
+            System.out.println("***");
+            System.out.println();
+
+        }
 	}
     
     public int getPV () {
