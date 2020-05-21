@@ -37,6 +37,8 @@ public class Partie {
 
     public void tour (Joueur a){
 
+        printNomJoueur(a);
+
         this.numTour=this.numTour+1;
 
         a.numTour=a.numTour+1;
@@ -57,6 +59,12 @@ public class Partie {
         System.out.println();
         a.printChampBataille();
 
+
+    }
+    public void printNomJoueur(Joueur a){
+        System.out.println();
+        System.out.println("* * * TOUR DE " + a.nomJoueur + " * * *");
+        System.out.println();
 
     }
 

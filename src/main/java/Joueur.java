@@ -61,7 +61,7 @@ public class Joueur {
             }
             
             else{
-                    System.out.println("VOUS N'AVEZ PAS ASSEZ DE MANA POUR PAYER CETTE CREATURE. SAISISSEZ UN NOUVEAU N°");
+                    System.out.println("VOUS N'AVEZ PAS ASSEZ DE MANA POUR PAYER CETTE CREATURE.");
                     System.out.println();
                     System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
 
@@ -111,11 +111,12 @@ public class Joueur {
 
         if (empty == true) {
             System.out.println("VOUS N'AVEZ PAS DE CREATURE SUR LE CHAMP DE BATAILLE, FIN DE VOTRE TOUR");
+            entreeContinuer();
         }
 
         else {
 		
-		    System.out.println("ENTRER NÂ° CREATURE ATTAQUANTE"); // on attaque avec une carte Ã  la fois 
+		    System.out.println("ENTRER N° CREATURE ATTAQUANTE"); // on attaque avec une carte Ã  la fois 
             Scanner scan = new Scanner(System.in);
             int numCreatureAttaquante = scan.nextInt();
 
@@ -145,6 +146,8 @@ public class Joueur {
             System.out.println("***");
             System.out.println();
 
+            entreeContinuer();
+
         }
 	}
     
@@ -155,5 +158,13 @@ public class Joueur {
     public void printPV () {
         System.out.print(this.pv);
     }
+
+    public void entreeContinuer() {
+        String s = "ENTREE POUR CONTINUER";
+        System.out.println(s);
+        Scanner passer = new Scanner(System.in);
+        passer.nextLine();
+    }
+
 	
 }
