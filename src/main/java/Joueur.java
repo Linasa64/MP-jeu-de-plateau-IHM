@@ -37,37 +37,44 @@ public class Joueur {
         int numCreaturePayee = scan.nextInt();
 
         while (numCreaturePayee != -1) {
+			printPioche();
+				if(numCreaturePayee >=this.pioche.size()){
+					System.out.println("ENTREZ UN N° VALIDE SVP");
+					System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
 
-            int prix = this.pioche.get(numCreaturePayee).getPrix();
+					numCreaturePayee = scan.nextInt();
+				}else {
+					int prix = this.pioche.get(numCreaturePayee).getPrix();
             
-            if(prix<=this.mana && prix>=0){
+					if(prix<=this.mana && prix>=0){
 
-                Creature creaturePayee=this.pioche.get(numCreaturePayee);
+						Creature creaturePayee=this.pioche.get(numCreaturePayee);
 
-                this.champBataille.add(creaturePayee);
-                this.pioche.remove(numCreaturePayee);
-                this.mana=this.mana - creaturePayee.getPrix();
+						this.champBataille.add(creaturePayee);
+						this.pioche.remove(numCreaturePayee);
+						this.mana=this.mana - creaturePayee.getPrix();
 
-                System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
+						System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
 
-                numCreaturePayee = scan.nextInt();
-            }
+						numCreaturePayee = scan.nextInt();
+					}
 
-            else if (prix < 0){
-                System.out.println("ENTREZ UN N° VALIDE SVP");
-                System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
+					else if (prix < 0 ){
+						System.out.println("ENTREZ UN N° VALIDE SVP");
+						System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
 
-                numCreaturePayee = scan.nextInt();
-            }
+						numCreaturePayee = scan.nextInt();
+					}
             
-            else{
-                    System.out.println("VOUS N'AVEZ PAS ASSEZ DE MANA POUR PAYER CETTE CREATURE.");
-                    System.out.println();
-                    System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
+					else{
+							System.out.println("VOUS N'AVEZ PAS ASSEZ DE MANA POUR PAYER CETTE CREATURE.");
+							System.out.println();
+							System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
 
-                    numCreaturePayee = scan.nextInt();
-                }
-            }
+							numCreaturePayee = scan.nextInt();
+					}
+				}
+			}
 
         System.out.println();
         System.out.println("* * * PHASE D'ATTAQUE * * *");
