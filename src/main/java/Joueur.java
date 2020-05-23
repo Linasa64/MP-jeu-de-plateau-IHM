@@ -37,41 +37,44 @@ public class Joueur {
         int numCreaturePayee = scan.nextInt();
 
         while (numCreaturePayee != -1) {
+			this.printPioche();
+				if(numCreaturePayee >=this.pioche.size() || numCreaturePayee <-1){ // y a un défaut de numéro
+					System.out.println("ENTREZ UN N° VALIDE SVP");
+					System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
 
-            int prix = this.pioche.get(numCreaturePayee).getPrix();
+					numCreaturePayee = scan.nextInt();
+				}else { // soit ça marche, soit y a un défaut de prix
+					int prix = this.pioche.get(numCreaturePayee).getPrix();
             
-            if(prix<=this.mana && prix>=0){
+					if(prix<=this.mana && prix>=0){ // ici ça marche
 
-                Creature creaturePayee=this.pioche.get(numCreaturePayee);
+						Creature creaturePayee=this.pioche.get(numCreaturePayee);
 
-                this.champBataille.add(creaturePayee);
-                this.pioche.remove(numCreaturePayee);
-                this.mana=this.mana - creaturePayee.getPrix();
+						this.champBataille.add(creaturePayee);
+						this.pioche.remove(numCreaturePayee);
+						this.mana=this.mana - creaturePayee.getPrix();
 
-                System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
+						System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
 
-                numCreaturePayee = scan.nextInt();
-            }
+						numCreaturePayee = scan.nextInt();
+					}
 
-            else if (prix < 0){
-                System.out.println("ENTREZ UN N° VALIDE SVP");
-                System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
-
-                numCreaturePayee = scan.nextInt();
-            }
             
-            else{
-                    System.out.println("VOUS N'AVEZ PAS ASSEZ DE MANA POUR PAYER CETTE CREATURE. SAISISSEZ UN NOUVEAU N°");
-                    System.out.println();
-                    System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
+					else{ // ici ça marche pas parce que problème de Prix 
+							System.out.println("VOUS N'AVEZ PAS ASSEZ DE MANA POUR PAYER CETTE CREATURE.");
+							System.out.println();
+							System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
 
-                    numCreaturePayee = scan.nextInt();
-                }
-            }
+							numCreaturePayee = scan.nextInt();
+					}
+				}
+			}
 
         System.out.println();
         System.out.println("* * * PHASE D'ATTAQUE * * *");
         System.out.println();
+        
+        this.printPioche();
     }
   
     public void genereMainDepart() {
@@ -111,11 +114,12 @@ public class Joueur {
 
         if (empty == true) {
             System.out.println("VOUS N'AVEZ PAS DE CREATURE SUR LE CHAMP DE BATAILLE, FIN DE VOTRE TOUR");
+            entreeContinuer();
         }
 
         else {
 		
-		    System.out.println("ENTRER NÂ° CREATURE ATTAQUANTE"); // on attaque avec une carte Ã  la fois 
+		    System.out.println("ENTRER N° CREATURE ATTAQUANTE"); // on attaque avec une carte Ã  la fois 
             Scanner scan = new Scanner(System.in);
             int numCreatureAttaquante = scan.nextInt();
 
@@ -125,7 +129,7 @@ public class Joueur {
 		
             if (chanceAttaque <= 0.33){  // attaque reussit
                 System.out.println("*Rick astley danse*");
-                System.out.println("votre attaque rÃ©ussit");
+                System.out.println("votre attaque réussit");
                 Creature creatureAttaquante=this.champBataille.get(numCreatureAttaquante);
                 this.adversaire.pv=this.adversaire.pv-creatureAttaquante.getForce();
 			
@@ -145,6 +149,8 @@ public class Joueur {
             System.out.println("***");
             System.out.println();
 
+            entreeContinuer();
+
         }
 	}
     
@@ -155,5 +161,17 @@ public class Joueur {
     public void printPV () {
         System.out.print(this.pv);
     }
+
+    public void printMana() {
+        System.out.print(this.mana);
+    }
+
+    public void entreeContinuer() {
+        String s = "ENTREE POUR CONTINUER";
+        System.out.println(s);
+        Scanner passer = new Scanner(System.in);
+        passer.nextLine();
+    }
+
 	
 }
