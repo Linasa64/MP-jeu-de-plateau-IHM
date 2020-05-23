@@ -37,16 +37,16 @@ public class Joueur {
         int numCreaturePayee = scan.nextInt();
 
         while (numCreaturePayee != -1) {
-			printPioche();
-				if(numCreaturePayee >=this.pioche.size()){
+			this.printPioche();
+				if(numCreaturePayee >=this.pioche.size() || numCreaturePayee <-1){ // y a un défaut de numéro
 					System.out.println("ENTREZ UN N° VALIDE SVP");
 					System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
 
 					numCreaturePayee = scan.nextInt();
-				}else {
+				}else { // soit ça marche, soit y a un défaut de prix
 					int prix = this.pioche.get(numCreaturePayee).getPrix();
             
-					if(prix<=this.mana && prix>=0){
+					if(prix<=this.mana && prix>=0){ // ici ça marche
 
 						Creature creaturePayee=this.pioche.get(numCreaturePayee);
 
@@ -59,14 +59,8 @@ public class Joueur {
 						numCreaturePayee = scan.nextInt();
 					}
 
-					else if (prix < 0 ){
-						System.out.println("ENTREZ UN N° VALIDE SVP");
-						System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
-
-						numCreaturePayee = scan.nextInt();
-					}
             
-					else{
+					else{ // ici ça marche pas parce que problème de Prix 
 							System.out.println("VOUS N'AVEZ PAS ASSEZ DE MANA POUR PAYER CETTE CREATURE.");
 							System.out.println();
 							System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
@@ -79,6 +73,8 @@ public class Joueur {
         System.out.println();
         System.out.println("* * * PHASE D'ATTAQUE * * *");
         System.out.println();
+        
+        this.printPioche();
     }
   
     public void genereMainDepart() {
