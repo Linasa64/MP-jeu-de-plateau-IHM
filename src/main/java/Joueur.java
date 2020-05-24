@@ -37,11 +37,17 @@ public class Joueur {
         int numCreaturePayee = scan.nextInt();
 
         while (numCreaturePayee != -1) {
+			
+			
 			this.printPioche();
 				if(numCreaturePayee >=this.pioche.size() || numCreaturePayee <-1){ // y a un défaut de numéro
 					System.out.println("ENTREZ UN N° VALIDE SVP");
 					System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
-
+					System.out.println();
+					System.out.print("MON MANA: ");
+					this.printMana();
+					System.out.println();
+					
 					numCreaturePayee = scan.nextInt();
 				}else { // soit ça marche, soit y a un défaut de prix
 					int prix = this.pioche.get(numCreaturePayee).getPrix();
@@ -53,9 +59,12 @@ public class Joueur {
 						this.champBataille.add(creaturePayee);
 						this.pioche.remove(numCreaturePayee);
 						this.mana=this.mana - creaturePayee.getPrix();
-
+						System.out.println();
+						System.out.print("MON MANA: ");
+						this.printMana();
+						System.out.println();
 						System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
-
+						
 						numCreaturePayee = scan.nextInt();
 					}
 
@@ -63,8 +72,11 @@ public class Joueur {
 					else{ // ici ça marche pas parce que problème de Prix 
 							System.out.println("VOUS N'AVEZ PAS ASSEZ DE MANA POUR PAYER CETTE CREATURE.");
 							System.out.println();
+							System.out.print("MON MANA: ");
+							this.printMana();
+							System.out.println();
 							System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
-
+							
 							numCreaturePayee = scan.nextInt();
 					}
 				}
@@ -124,17 +136,15 @@ public class Joueur {
             int numCreatureAttaquante = scan.nextInt();
 
             System.out.println();
+			Creature creatureAttaquante=this.champBataille.get(numCreatureAttaquante);
 		
-		    double chanceAttaque=Math.random();
-		
-            if (chanceAttaque <= 0.33){  // attaque reussit
+            if (Math.random()< creatureAttaquante.getReussite()){  // attaque reussit
                 System.out.println("*Rick astley danse*");
                 System.out.println("votre attaque réussit");
-                Creature creatureAttaquante=this.champBataille.get(numCreatureAttaquante);
                 this.adversaire.pv=this.adversaire.pv-creatureAttaquante.getForce();
 			
             }
-            else if (chanceAttaque >= 0.66){ // l'attaque ne rÃ©ussit pas la crÃ©ature se dÃ©truit
+            else if (Math.random()<0.5){ // l'attaque ne réussit pas la crÃ©ature se détruit
                 
                 System.out.println("WASTED LA NUCLEARITE DES ROLLERS A DETRUIT VOTRE CARTE"); // eddy malou n'est pas fier de vous
                 this.champBataille.remove(numCreatureAttaquante);			
