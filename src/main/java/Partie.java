@@ -47,8 +47,7 @@ public class Partie {
         System.out.print("MON MANA: ");
         a.printMana();
         System.out.println();
-        System.out.println();
-
+        
         a.pioche.add(new Creature());
         a.printPioche();
         a.printChampBataille();
