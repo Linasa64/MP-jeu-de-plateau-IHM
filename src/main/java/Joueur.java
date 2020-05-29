@@ -130,8 +130,15 @@ public class Joueur {
         }
 
         else {
-		
-		    System.out.println("ENTRER N° CREATURE ATTAQUANTE"); // on attaque avec une carte Ã  la fois 
+			
+			int x = this.champBataille.size();
+			
+			if (x>=3){
+				x = 3;
+			}
+			
+			for(int i = 0;i<x;i++){
+		    System.out.println("ENTRER N° CREATURE ATTAQUANTE "+(i+1)); // on attaque avec une carte Ã  la fois 
             Scanner scan = new Scanner(System.in);
             int numCreatureAttaquante = scan.nextInt();
 
@@ -160,7 +167,7 @@ public class Joueur {
             System.out.println();
 
             entreeContinuer();
-
+           }
         }
 	}
     
