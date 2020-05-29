@@ -35,6 +35,7 @@ Les créatures qui ont survécu sont conservées pour les tours suivant sur le c
 ## Remerciements
 
 Par ordre d'affection:
+   - Raoul pour l'huile d'olive Puget
    - Rick Astley pour sa musique de qualité
    - Eddy Malou pour son savoir
    - Benoît magimel pour sa filmographie de qualité (on est fan)
