@@ -32,7 +32,7 @@ Plus la créature est petite, plus elle a de chances de réussir son attaque.
   
 Les créatures qui ont survécu sont conservées pour les tours suivant sur le champ de bataille.
 
-**Remerciements**
+## Remerciements
 
 Par ordre d'affection:
    - Rick Astley pour sa musique de qualité
