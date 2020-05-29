@@ -6,7 +6,7 @@ Ce jeu a été réalisé dans le cadre du projet d'informatique de fin de 1ère 
 
 **Le principe**
 
-Basé sur l'univers de Magic The Gathering, on a changé les règles (un peu, beaucoup, beaucoup trop) si bien que ça ne ressemble plus vraiment au jeu de base, mais le gameplay est palpitant et mémorable, à tel point que 1 joueur sur 42 a dit que sa vision du monde en a été changée depuis (en bien évidement).
+Basé sur l'univers de Magic The Gathering, on a changé les règles (un peu, beaucoup, beaucoup trop) si bien que ça ne ressemble plus vraiment au jeu de base, mais le gameplay est palpitant et mémorable, à tel point que 1 joueur sur 42 a dit que sa vision du monde en a été changée depuis (en bien, évidement).
 
 Tu commences la partie avec 20 PV (points de vie) et le but du jeu c'est de tuer ton adversaire avant qu'il ne te tue (PV<=0), en attaquant avec des créatures.
 
