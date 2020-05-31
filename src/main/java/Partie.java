@@ -3,6 +3,8 @@ public class Partie {
     private Joueur joueur2;
     private int numTour;
 
+
+
     public void partieEstTerminee (Joueur a, Joueur b) {
         if(a.getPV()<=0){
             System.out.println(a.getNomJoueur() + " a perdu, I hear CHEH in my oreillette");
@@ -12,7 +14,7 @@ public class Partie {
         }
     }
 
-    public void initialisation (){
+    public Partie (){
 
         this.joueur1=new Joueur(); 
         this.joueur2=new Joueur();
@@ -22,18 +24,40 @@ public class Partie {
 
         this.joueur1.genereMainDepart();
         this.joueur2.genereMainDepart();
+        
+        this.lancerPartie();
 
     }
 
-    public void partie () {
-
-        if(this.numTour%2==0){
-            tour(joueur1);
-        }
-        else{
-            tour(joueur2);
-        }
+    public void tourPartie () {
+				
+		if (Math.random()<0.5){		// pour déterminer aléatoirement qui commence
+			if(this.numTour%2==0){
+				tour(joueur1);
+			}
+			else{
+				tour(joueur2);
+			}
+		}	
+		else{
+			if(this.numTour%2==0){
+				tour(joueur2);
+			}
+			else{
+				tour(joueur1);
+			}
+		}
     }
+    
+    public void lancerPartie() { // méthode qui fait tourner la partie tant qu'aucun joueur n'a perdu
+		
+    
+        while (this.getJoueur1().getPV() >0 && this.getJoueur2().getPV()>0){
+            this.tourPartie();
+        }
+
+        this.partieEstTerminee(this.getJoueur1(), this.getJoueur2());
+	}
 
     public void tour (Joueur a){
 
