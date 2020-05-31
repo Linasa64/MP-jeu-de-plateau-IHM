@@ -1,9 +1,10 @@
 public class Creature {
-    int nCarte;
-    int prix;
-    int force;
-    double reussite; // associé à la proba de réussite de la carte lors de l'attaque
-    String nomCreature; // pour faire plus accueillant
+
+    private int nCarte;
+    private int prix;
+    private int force;
+    private double reussite; // associé à la proba de réussite de la carte lors de l'attaque
+    private String nomCreature; // pour faire plus accueillant
     
 
     public Creature (){

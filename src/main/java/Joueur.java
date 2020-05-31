@@ -6,13 +6,13 @@ import java.util.ListIterator;
 import java.util.Scanner; 
 
 public class Joueur {
-    int pv;
-    String nomJoueur;
-    int mana;
-    int numTour;
-    ArrayList<Creature> pioche;
-    ArrayList<Creature> champBataille;
-    Joueur adversaire;
+    private int pv; 
+    private String nomJoueur;
+    private int mana;
+    private int numTour;
+    private ArrayList<Creature> pioche;
+    private ArrayList<Creature> champBataille;
+    private Joueur adversaire;
     
 
     public Joueur(){
@@ -45,7 +45,7 @@ public class Joueur {
 					System.out.println("SI VOUS VOULEZ PAYER UNE CREATURE, SAISISSEZ SON N° ; SINON PASSEZ EN TAPANT -1.");
 					System.out.println();
 					System.out.print("MON MANA: ");
-					this.printMana();
+					this.printMana(); // rajouter un get parce que c'est propre au joueur
 					System.out.println();
 					
 					numCreaturePayee = scan.nextInt();
@@ -171,7 +171,14 @@ public class Joueur {
         }
 	}
     
-    public int getPV () {
+     public void entreeContinuer() { // méthode cool on a juste à appuyer sur Entree pour passer à l'étape d'après
+        String s = "ENTREE POUR CONTINUER";
+        System.out.println(s);
+        Scanner passer = new Scanner(System.in);
+        passer.nextLine();
+    }
+    
+    public int getPV () { // methodes relatives aux PV
         return this.pv;
     }
 
@@ -179,16 +186,43 @@ public class Joueur {
         System.out.print(this.pv);
     }
 
-    public void printMana() {
+    public void printMana() { // methodes relatives au mana
         System.out.print(this.mana);
     }
-
-    public void entreeContinuer() {
-        String s = "ENTREE POUR CONTINUER";
-        System.out.println(s);
-        Scanner passer = new Scanner(System.in);
-        passer.nextLine();
+    
+    public int getMana () {
+        return this.mana;
+    }
+    
+    public void setMana (int a) {
+        this.mana=a;
     }
 
+     
+    public String getNomJoueur(){ // méthode relative au nom du joueur
+		return this.nomJoueur;
+	}
 	
+	
+	public int getNumTour () { // méthodes relatives au numéro du tour propre à chaque joueur 
+        return this.numTour;
+    }
+    
+         
+     public void setNumTour (int b) {
+        this.numTour=b;
+    }
+    
+    public void setAdversaire (Joueur a) { // méthode relative à l'adversaire
+        this.adversaire=a;
+    }
+    
+    public Joueur getAdversaire (){
+		return this.adversaire;
+	}
+    
+    public ArrayList<Creature> getPioche() { // méthode qui renvoie la pioche d'un joueur
+		return this.pioche;
+	}
+    
 }
