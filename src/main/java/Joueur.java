@@ -98,7 +98,7 @@ public class Joueur {
     public void printPioche() {
         System.out.println("MAIN JOUEUR");
         for(int i=0;i<this.pioche.size();i++){
-            System.out.println("Carte n°" + i + ": Prix: " +this.pioche.get(i).getPrix() + " Force: " + this.pioche.get(i).getForce());
+            System.out.println("Carte n°" + i + ":"+ this.pioche.get(i).getNom()+" / Prix: " +this.pioche.get(i).getPrix() + " Force: " + this.pioche.get(i).getForce());
         }
         System.out.println();
         System.out.println("***");
@@ -109,7 +109,7 @@ public class Joueur {
     public void printChampBataille() {
         System.out.println("CHAMP DE BATAILLE");
         for(int i=0;i<this.champBataille.size();i++){
-            System.out.println("Carte n°" + i + ": Force: " + this.champBataille.get(i).getForce());
+            System.out.println("Carte n°" + i + ":"+ this.champBataille.get(i).getNom()+ ": Force: " + this.champBataille.get(i).getForce());
         }
         System.out.println();
         System.out.println("***");
@@ -138,7 +138,7 @@ public class Joueur {
 			}
 			
 			for(int i = 0;i<x;i++){
-		    System.out.println("ENTRER N° CREATURE ATTAQUANTE "+(i+1)); // on attaque avec une carte Ã  la fois 
+		    System.out.println("CHOISISSEZ CREATURE ATTAQUANTE N°"+(i+1)); // on attaque avec une carte Ã  la fois 
             Scanner scan = new Scanner(System.in);
             int numCreatureAttaquante = scan.nextInt();
 
