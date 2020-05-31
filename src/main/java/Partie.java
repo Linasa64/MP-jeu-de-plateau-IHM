@@ -30,13 +30,23 @@ public class Partie {
     }
 
     public void tourPartie () {
-
-        if(this.numTour%2==0){
-            tour(joueur1);
-        }
-        else{
-            tour(joueur2);
-        }
+				
+		if (Math.random()<0.5){		// pour déterminer aléatoirement qui commence
+			if(this.numTour%2==0){
+				tour(joueur1);
+			}
+			else{
+				tour(joueur2);
+			}
+		}	
+		else{
+			if(this.numTour%2==0){
+				tour(joueur2);
+			}
+			else{
+				tour(joueur1);
+			}
+		}
     }
     
     public void lancerPartie() { // méthode qui fait tourner la partie tant qu'aucun joueur n'a perdu
