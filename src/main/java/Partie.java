@@ -1,14 +1,14 @@
 public class Partie {
-    Joueur joueur1;
-    Joueur joueur2;
-    int numTour;
+    private Joueur joueur1;
+    private Joueur joueur2;
+    private int numTour;
 
     public void partieEstTerminee (Joueur a, Joueur b) {
-        if(a.pv<=0){
-            System.out.println(a.nomJoueur + " a perdu, I hear CHEH in my oreillette");
+        if(a.getPV()<=0){
+            System.out.println(a.getNomJoueur() + " a perdu, I hear CHEH in my oreillette");
         }
-        else if(b.pv<=0){
-            System.out.println(b.nomJoueur + " a perdu, I hear CHEH in my oreillette");
+        else if(b.getPV()<=0){
+            System.out.println(b.getNomJoueur() + " a perdu, I hear CHEH in my oreillette");
         }
     }
 
@@ -17,8 +17,8 @@ public class Partie {
         this.joueur1=new Joueur(); 
         this.joueur2=new Joueur();
 
-        this.joueur1.adversaire=joueur2;
-        this.joueur2.adversaire=joueur1;
+        this.joueur1.setAdversaire(joueur2);
+        this.joueur2.setAdversaire(joueur1);
 
         this.joueur1.genereMainDepart();
         this.joueur2.genereMainDepart();
@@ -41,14 +41,14 @@ public class Partie {
 
         this.numTour=this.numTour+1;
 
-        a.numTour=a.numTour+1;
-        a.mana=a.mana+a.numTour;
+        a.setNumTour(a.getNumTour()+1);
+        a.setMana(a.getMana()+a.getNumTour());
 
         System.out.print("MON MANA: ");
         a.printMana();
         System.out.println();
         
-        a.pioche.add(new Creature());
+        a.getPioche().add(new Creature());
         a.printPioche();
         a.printChampBataille();
         
@@ -59,7 +59,7 @@ public class Partie {
         System.out.print("MES PV: ");
         a.printPV();
         System.out.print(" ; PV DE MON ADVERSAIRE: ");
-        a.adversaire.printPV();
+        a.getAdversaire().printPV();
 
         System.out.println();
         a.printChampBataille();
@@ -68,9 +68,17 @@ public class Partie {
     }
     public void printNomJoueur(Joueur a){
         System.out.println();
-        System.out.println("* * * TOUR DE " + a.nomJoueur + " * * *");
+        System.out.println("* * * TOUR DE " + a.getNomJoueur() + " * * *");
         System.out.println();
 
+    }
+    
+    public Joueur getJoueur1 () {
+        return this.joueur1;
+    }
+    
+    public Joueur getJoueur2 () {
+        return this.joueur2;
     }
 
 }

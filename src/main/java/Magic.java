@@ -3,10 +3,10 @@ public class Magic {
         Partie nouvellePartie=new Partie();
         nouvellePartie.initialisation();
 
-        while (nouvellePartie.joueur1.getPV() >0 && nouvellePartie.joueur2.getPV()>0){
+        while (nouvellePartie.getJoueur1().getPV() >0 && nouvellePartie.getJoueur2().getPV()>0){
             nouvellePartie.partie();
         }
 
-        nouvellePartie.partieEstTerminee(nouvellePartie.joueur1, nouvellePartie.joueur2);
+        nouvellePartie.partieEstTerminee(nouvellePartie.getJoueur1(), nouvellePartie.getJoueur2());
     }
 }
