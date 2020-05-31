@@ -1,4 +1,5 @@
 public class Creature {
+
     private int nCarte;
     private int prix;
     private int force;
