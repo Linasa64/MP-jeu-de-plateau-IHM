@@ -13,9 +13,14 @@ public class Magic {
     b.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         Partie nouvellePartie = new Partie();
+        fen.getContentPane().removeAll();
         fen.repaint();
+        fen.revalidate();
+        AffichageEtatJeu etatJeu = new AffichageEtatJeu();
       }
     });
+
+    AffichageEtatJeu etatJeu = new AffichageEtatJeu();
 
   }
 }
