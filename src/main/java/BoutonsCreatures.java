@@ -20,7 +20,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel; // j'ai tout mis parce que j'ai essayé avec plein de trucs, j'enlèverai plus tard les bibliothèques inutiles
 
-public class BoutonsCreatures extends JPanel /* implements ActionListener */ {
+public class BoutonsCreatures extends JPanel /* implements ActionListener */ { // j'ai mis en commentaire pour compiler
+                                                                               // mais il y a l'amorce en bas aussi
     private ArrayList<Creature> pioche;
     private ArrayList<Creature> champBataille;
 
@@ -30,7 +31,19 @@ public class BoutonsCreatures extends JPanel /* implements ActionListener */ {
         for (int i = 0; i <= this.pioche.size(); i++) {
             creatures.add(new JButton(i + ": " + this.pioche.get(i).getNom()));
         }
+        JPanel stop = new JPanel();
+        stop.add(new JButton("Je passe"));
+
+        JPanel groupeBoutons = new JPanel();
+        groupeBoutons.setLayout(new BoxLayout(groupeBoutons, BoxLayout.PAGE_AXIS));
+        groupeBoutons.add(creatures);
+        groupeBoutons.add(stop);
     }
+
+    // je sais pas comment faire le lien entre les boutons et les actions à
+    // effectuer avec les créatures dans les listes
+    // Surtout que les attributs de cette classe ne sont pas les mêmes que ceux de
+    // la classe joueur ??
 
     /*
      * public void actionPerformed(ActionEvent e) {
