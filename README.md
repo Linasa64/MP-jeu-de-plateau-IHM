@@ -42,7 +42,8 @@ Après avoir téléchargé les fichiers sur votre ordinateur, vous devrez aller 
   - jeu.jpg (dans la classe Panneau)
   - theros.wav (dans la classe Audio)
   
- A noter que nous ne rastley.jpg et theros.wav ne sont pas notre propriété.
+ A noter que rastley.jpg et theros.wav ne sont pas notre propriété.
+ 
  jeu.jpg est notre création, libre de droits et peut être réutilisé
 
 ## Remerciements
