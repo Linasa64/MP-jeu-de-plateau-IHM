@@ -32,6 +32,20 @@ Plus la créature est petite, plus elle a de chances de réussir son attaque.
   
 Les créatures qui ont survécu sont conservées pour les tours suivant sur le champ de bataille.
 
+## Avant de jouer !
+
+Une interface graphique sert de page d'accueil du jeu.
+Celle-ci contient des images (2). Une bande son est également jouée tout au long de la partie.
+
+Après avoir téléchargé les fichiers sur votre ordinateur, vous devrez aller dans le dossier src, et copier VOS chemins d'accès des fichiers suivants:
+  - rastley.jpg (dans la classe Panneau)
+  - jeu.jpg (dans la classe Panneau)
+  - theros.wav (dans la classe Audio)
+  
+ A noter que rastley.jpg et theros.wav ne sont pas notre propriété.
+ 
+ jeu.jpg est notre création, libre de droits et peut être réutilisé
+
 ## Remerciements
 
 Par ordre d'affection décroissante:
