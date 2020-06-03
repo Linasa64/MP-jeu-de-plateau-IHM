@@ -4,6 +4,7 @@ import java.awt.event.*;
 public class Magic {
   public static void main(String[] args) {
 
+    Audio musique = new Audio();
     Fenetre fen = new Fenetre();
 
     JButton b = new JButton("Commencer une partie");
@@ -12,15 +13,13 @@ public class Magic {
 
     b.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
+        //fen.getContentPane().removeAll();
+        //fen.repaint();
+        //fen.revalidate();
+        fen.dispose();
         Partie nouvellePartie = new Partie();
-        fen.getContentPane().removeAll();
-        fen.repaint();
-        fen.revalidate();
-        AffichageEtatJeu etatJeu = new AffichageEtatJeu();
       }
     });
-
-    AffichageEtatJeu etatJeu = new AffichageEtatJeu();
 
   }
 }
