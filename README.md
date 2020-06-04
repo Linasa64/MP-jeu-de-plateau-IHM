@@ -1,4 +1,4 @@
-# CE N'EST PAS LA VERSION FINALE, JUSTE UNE BRANCHE UN PEU TROP DETACHEE DU PROJET INITIAL POUR EVITER DE TOUT DETRUIRE (spoiler alert: j'ai rien détruit)
+# Ce n'est pas la version finale du projet, juste une branche un peu beaucoup détachée du projet pour éviter de tout détruire (spoiler alert: j'ai rien détruit finalement)
 
 
 # Bienvenue à toi, nouveau joueur !
