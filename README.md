@@ -1,3 +1,6 @@
+# CE N'EST PAS LA VERSION FINALE, JUSTE UNE BRANCHE UN PEU TROP DETACHEE DU PROJET INITIAL POUR EVITER DE TOUT DETRUIRE (spoiler alert: j'ai rien détruit)
+
+
 # Bienvenue à toi, nouveau joueur !
 
 Ce jeu a été réalisé dans le cadre du projet d'informatique de fin de 1ère année par des étudiantes de l'INSA Lyon.
